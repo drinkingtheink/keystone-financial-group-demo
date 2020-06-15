@@ -38,7 +38,7 @@
     <section class="intro" v-show="!theme">
       <h2>Welcome Keystone Financial Group</h2>
       <KFGLogo class="intro-logo" />
-      <p>Please click on an option below to see an example experience with your new logo implemented:</p>
+      <p>Please click on an option below to see an example experience with your new logo implemented with a color palette:</p>
 
       <section class="option-selection">
         <button class="a" v-on:click="updateTheme('a')">
