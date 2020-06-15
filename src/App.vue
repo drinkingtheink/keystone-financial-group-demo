@@ -374,7 +374,7 @@
         }
 
         .more-img.b {
-          border: 15px solid $p2color1;
+          border: 15px solid $p2color2;
         }
       }
     }
