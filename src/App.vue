@@ -224,13 +224,12 @@
 
       .leaf, 
       .trunk {
-        transition: all .2s;
+        transition: all .5s;
       }
 
       &:hover {
-        .leaf,
-        .trunk {
-          transform: scale(1.1);
+        .leaf {
+          transform: rotate(360deg);
         }
       }
     }
