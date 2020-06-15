@@ -33,6 +33,7 @@
 
       <img class="more-img a" v-show="theme === 'a'" src="https://i.ibb.co/nLxQJKq/a-shirt.jpg" alt="a-shirt" border="0" />
       <img class="more-img a" v-show="theme === 'b'" src="https://i.ibb.co/bRZ6rMr/b-shirt.jpg" alt="b-shirt" border="0" />
+      <img class="more-img b" src="https://i.ibb.co/Qkcrd2k/office.jpg" alt="office" border="0">
 
     </section>
   </div>
@@ -197,6 +198,8 @@ export default {
 
     .more-img.b {
       z-index: 10;
+      transform: rotate(14deg);
+      margin-left: -2em;
     }
   }
 </style>

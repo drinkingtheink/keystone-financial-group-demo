@@ -330,6 +330,10 @@
         .more-img.a {
           border: 10px solid $p1color2;
         }
+
+        .more-img.b {
+          border: 15px solid $p1color1;
+        }
       }
     }
 
@@ -367,6 +371,10 @@
       .more {
         .more-img.a {
           border: 10px solid $p2color3;
+        }
+
+        .more-img.b {
+          border: 15px solid $p2color1;
         }
       }
     }
