@@ -51,7 +51,7 @@
       </section>
     </section>
 
-    <Content :class="theme" v-if="theme"/>
+    <Content :class="theme" :theme="theme" v-if="theme"/>
   </div>
 </template>
 
@@ -77,11 +77,6 @@
       clearTheme () {
         this.theme = null;
       }
-    },
-    watch: {
-      theme: () => {
-
-      }
     }
   };
 </script>
@@ -106,6 +101,7 @@
   body {
     margin: 0;
     padding: 0;
+    font-size: 12pt;
   }
 
   h1,
@@ -180,6 +176,7 @@
     width: 100%;
     top: 0px;
     background-color: rgba(black, .8);  
+    z-index: 1000000000;
   }
 
   .toolbar-action {
@@ -328,6 +325,12 @@
           border-color: $p1color1;
         }
       }
+
+      .more {
+        .more-img.a {
+          border: 10px solid $p1color2;
+        }
+      }
     }
 
     &.b {
@@ -360,6 +363,16 @@
           border-color: $p2color3;
         }
       }
+
+      .more {
+        .more-img.a {
+          border: 10px solid $p2color3;
+        }
+      }
     }
+  }
+
+  .more-img {
+
   }
 </style>
