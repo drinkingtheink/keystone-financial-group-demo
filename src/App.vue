@@ -1,0 +1,267 @@
+<template>
+  <div id="app" :class="theme">
+    <section class="toolbar" v-show="theme">
+        <button class="a" v-on:click="clearTheme">
+          Clear
+        </button>
+
+        <button 
+          class="toolbar-action" 
+          v-on:click="updateTheme('a')"
+          :class="{ active: theme === 'a' }"
+        >
+          A
+        </button>
+
+        <button 
+          class="toolbar-action" 
+          v-on:click="updateTheme('b')"
+          :class="{ active: theme === 'b' }"
+        >
+          B
+        </button>
+      </section>
+    </section>
+
+    <header v-show="theme" :class="theme">
+      <KFGLogo class="header-logo" />
+
+      <div class="nav-link">
+        Services
+      </div>
+
+      <div class="nav-link">
+        About
+      </div>
+    </header>
+
+    <section class="intro" v-show="!theme">
+      <h2>Welcome Keystone Financial Group</h2>
+      <KFGLogo class="intro-logo" />
+      <p>Please click on an option below to see an example experience with your new logo implemented:</p>
+
+      <section class="option-selection">
+        <button class="a" v-on:click="updateTheme('a')">
+          A
+        </button>
+
+        <button class="b" v-on:click="updateTheme('b')">
+          B
+        </button>
+      </section>
+    </section>
+
+    <Content :class="theme" v-if="theme"/>
+  </div>
+</template>
+
+<script>
+  import Content from './components/Content.vue'
+  import KFGLogo from './components/KFGLogo.vue'
+
+  export default {
+    name: 'App',
+    components: {
+      Content,
+      KFGLogo
+    },
+    data() {
+      return {
+        theme: null
+      }
+    },
+    methods: {
+      updateTheme(themeName) {
+        this.theme = themeName;
+      },
+      clearTheme () {
+        this.theme = null;
+      }
+    },
+    watch: {
+      theme: () => {
+
+      }
+    }
+  };
+</script>
+
+<style lang="scss">
+  @import url('https://fonts.googleapis.com/css2?family=Capriola&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cantarell&display=swap');
+
+  $p1color1: #75c394;
+  $p1color2: #12361f;
+  $p1color3: #568d6c;
+
+  $p2color1: #0d2946;
+  $p2color2: #2a9cd7;
+  $p2color3: #40ae49;
+
+  @mixin shadow {
+    box-shadow: 0px 10px 15px 0px rgba(51,51,51,0.6);
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    padding: 0;
+    margin: 0;
+    font-family: 'Capriola', sans-serif;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  span,
+  a,
+  p,
+  li {
+    font-family: 'Cantarell', sans-serif;
+  }
+
+  a {
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: .5rem;
+
+    &.button-like {
+      @include shadow;
+    }
+  }
+
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+
+    > * {
+      transition: all .2s;
+    }
+  }
+
+  .toolbar {
+    padding: .25em;
+    background-color: rgba(black, .2);  
+  }
+
+  .toolbar-action.active {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .option-selection {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    button {
+      font-size: 200%;
+      padding: 10%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  header {
+    @include shadow;
+    display: flex;
+    height: 65px;
+    border-bottom: 5px solid;
+
+    .header-logo {
+      width: 250px
+    }
+
+    .nav-link {
+      padding: 23px .5rem 0 .5rem;
+      color: white;
+    }
+
+    &.a {
+      background-color: $p1color1;
+      border-color: $p1color3;
+    }
+
+    &.b {
+      background-color: $p2color1;
+      border-color: $p2color2;
+    }
+  }
+
+  .intro-logo {
+    max-width: 600px;
+  }
+
+  .example-content {
+    &.a {
+      background-color: $p1color1;
+
+      p {
+        color: $p1color2;
+      }
+
+      a {
+        background-color: $p1color2;
+        color: white;
+      }
+
+      .about {
+        border-color: $p1color3;
+      }
+
+      .categories {
+        background-color: #ffffff;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%2375c394' fill-opacity='0.11' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+        article {
+          border-color: $p1color1;
+        }
+      }
+    }
+
+    &.b {
+      background-color: $p2color2;
+
+      p {
+        color: $p2color1;
+      }
+
+      a {
+        background-color: $p2color3;
+        color: white;
+      }
+
+      .about {
+        border-color: $p2color1;
+      }
+
+      .categories {
+        background-color: #ffffff;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2340ae49' fill-opacity='0.26'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+        article {
+          border-color: $p2color3;
+        }
+      }
+    }
+  }
+</style>
