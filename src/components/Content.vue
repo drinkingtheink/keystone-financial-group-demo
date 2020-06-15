@@ -1,8 +1,8 @@
 <template>
   <div class="example-content">
     <section class="hero">
-      <h1>Keystone Financial Group</h1>
-      <p>Trusted financial guidance. Built to serve you.</p>
+      <h1><span>Keystone Financial Group</span></h1>
+      <p><span>Trusted financial guidance. Built to serve you.</span></p>
       <a class="button-like" href="#">Learn More</a>
     </section>
 
@@ -63,7 +63,7 @@ export default {
 <style lang="scss">
   
   @mixin shadow {
-    box-shadow: 0px 10px 15px 0px rgba(51,51,51,0.6);
+    box-shadow: 0px 6px 10px 0px rgba(51,51,51,0.6);
   }
 
   .hero {
@@ -75,13 +75,31 @@ export default {
     padding: .5em;
 
     h1,
+    p {
+      span {
+        display: inline-block;
+        background-color: rgba(black, .6);
+        padding: .25em;
+      }
+    }
+
+    h1,
     p,
     a {
       font-size: 160%;
     }
 
     h1 {
-      margin-top: 15%;
+      margin-top: 10%;
+      
+      span {
+        font-weight: 800;
+        font-size: 200%;
+      }
+    }
+
+    p span {
+      color: white;
     }
   }  
 
@@ -107,7 +125,7 @@ export default {
       @include shadow;
       min-height: 20rem;
       width: 25%;
-      margin: 0 .5rem 1rem 0;
+      margin: 0 1rem 1.5rem 0;
       padding: 0 1rem;
       background-color: white;
       border-bottom: 10px solid;

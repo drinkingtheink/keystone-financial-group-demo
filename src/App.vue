@@ -155,9 +155,20 @@
     }
   }
 
+  $toolbarHeight: 25px;
+
   .toolbar {
-    padding: .25em;
-    background-color: rgba(black, .2);  
+    height: $toolbarHeight;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    background-color: rgba(black, .8);  
+  }
+
+  .toolbar-action {
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .toolbar-action.active {
@@ -172,8 +183,9 @@
     justify-content: center;
 
     button {
-      font-size: 200%;
-      padding: 10%;
+      font-size: 150%;
+      padding: 5%;
+      border-radius: 10px;
 
       &:hover {
         cursor: pointer;
@@ -185,6 +197,7 @@
     @include shadow;
     display: flex;
     height: 65px;
+    margin-top: $toolbarHeight;
     border-bottom: 5px solid;
 
     .header-logo {
@@ -194,21 +207,47 @@
     .nav-link {
       padding: 23px .5rem 0 .5rem;
       color: white;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     &.a {
       background-color: $p1color1;
       border-color: $p1color3;
+
+      .nav-link {
+        color: $p1color2;
+
+        &:hover {
+          color: white;
+        }
+      }
     }
 
     &.b {
       background-color: $p2color1;
       border-color: $p2color2;
+
+      .nav-link {
+        color: $p2color3;
+
+        &:hover {
+          color: white;
+        }
+      }
     }
   }
 
   .intro-logo {
     max-width: 600px;
+  }
+
+  .hero {
+    h1 span {
+      font-family: 'Capriola', sans-serif;
+    }
   }
 
   .example-content {
@@ -222,6 +261,12 @@
       a {
         background-color: $p1color2;
         color: white;
+      }
+
+      .hero {
+        h1 span {
+          color: $p1color1;
+        }
       }
 
       .about {
@@ -248,6 +293,12 @@
       a {
         background-color: $p2color3;
         color: white;
+      }
+
+      .hero {
+        h1 span {
+          color: $p2color2;
+        }
       }
 
       .about {
