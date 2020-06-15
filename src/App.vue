@@ -220,7 +220,19 @@
     border-bottom: 5px solid;
 
     .header-logo {
-      width: 250px
+      width: 250px;
+
+      .leaf, 
+      .trunk {
+        transition: all .2s;
+      }
+
+      &:hover {
+        .leaf,
+        .trunk {
+          transform: scale(1.1);
+        }
+      }
     }
 
     .nav-link {
