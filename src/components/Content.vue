@@ -50,31 +50,31 @@ export default {
           title: 'Budget and Savings',
           body: 'Identify spending to improve cash flows for saving.',
           class: 'budget',
-          img: 'https://kfg.netlify.app/services/budget-and-savings/thumb_huc735add9cb52c8c146cf737f64caa499_1992467_99fe038172c64cf345acbb8f48e4cc81.jpg'
+          img: 'https://i.ibb.co/bKgGzfW/cat1.jpg'
         },
         {
           title: 'Employee Benefits',
           body: 'Creating attractive Health and Wellness plans for SMB owners for their employees.',
           class: 'benefits',
-          img: 'https://kfg.netlify.app/services/employee-benefit-design-and-implementation/thumb_hu2e061bfdbee715a9a71c24d65135fdec_435015_2897019e7775d4d80fcb8f4f6524b048.jpg'
+          img: 'https://i.ibb.co/Rg1LgGF/cat2.jpg'
         },
         {
           title: 'Education Funding',
           body: 'Effectively invest to maximize availability for financial aid.',
           class: 'funding',
-          img: 'https://kfg.netlify.app/services/education-funding/thumb_hu6c04fd1a081859c295d8820ca09e5284_287182_680c704813aecc7331cc81ff1dc26a88.jpg'
+          img: 'https://i.ibb.co/VYd2n9z/cat3.jpg'
         },
         {
           title: 'Insurance Services',
           body: 'Protect against risk with adequate and cost effective coverage.',
           class: 'services',
-          img: 'https://kfg.netlify.app/services/insurance-services/thumb_hu8c4defa15d527709c2abe1551d29064c_2876026_d5bb610ca5cadce559a5c8e967d8212c.jpg'
+          img: 'https://i.ibb.co/7zVZ4sZ/cat4.jpg'
         },
         {
           title: 'Retirement Planning',
           body: 'Maximizing your portfolio to secure a comfortable retirement.',
           class: 'retirement',
-          img: 'https://kfg.netlify.app/services/retirement-and-social-security-planning/thumb_hubece55e4d000ae2db08555d5b39da967_3582779_ba773edfac1051e24b7c3ab98c259d18.jpg'
+          img: 'https://i.ibb.co/X8hvRxz/cat5.jpg'
         }
       ]
     }
