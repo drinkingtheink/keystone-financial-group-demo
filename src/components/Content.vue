@@ -20,6 +20,12 @@
         <p>{{ cat.body }}</p>
       </article>
     </section>
+
+    <section class="more">
+      <h2>Asset Map & Other Tools</h2>
+
+      <p>Nulla nec orci sit amet augue sagittis sodales sit amet et quam. Sed sed ipsum scelerisque, consequat est sed, interdum sapien. Nullam eget dolor eu erat mollis sollicitudin. Nulla consequat lectus quis orci condimentum, nec rutrum diam ullamcorper.</p>
+    </section>
   </div>
 </template>
 
@@ -134,6 +140,19 @@ export default {
         margin-top: 50%;
         margin-bottom: 1rem;
       }
+    }
+  }
+
+  .more {
+    background-color: white;
+    padding: 5em 0;
+
+    h2 {
+      margin-bottom: 2em;
+    }
+
+    p {
+      padding: 0 10%;
     }
   }
 </style>

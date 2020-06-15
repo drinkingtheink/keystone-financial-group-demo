@@ -1,7 +1,7 @@
 <template>
   <div id="app" :class="theme">
-    <section class="toolbar" v-show="theme">
-        <button class="a" v-on:click="clearTheme">
+    <section class="toolbar">
+        <button class="a" v-on:click="clearTheme" v-show="theme">
           Clear
         </button>
 
@@ -10,7 +10,7 @@
           v-on:click="updateTheme('a')"
           :class="{ active: theme === 'a' }"
         >
-          A
+          Option A
         </button>
 
         <button 
@@ -18,7 +18,7 @@
           v-on:click="updateTheme('b')"
           :class="{ active: theme === 'b' }"
         >
-          B
+          Option B
         </button>
       </section>
     </section>
@@ -137,9 +137,14 @@
     text-decoration: none;
     display: inline-block;
     margin-top: .5rem;
+    transition: all .2s;
 
     &.button-like {
       @include shadow;
+
+      &:hover {
+        background-color: white !important;
+      }
     }
   }
 
@@ -152,6 +157,18 @@
 
     > * {
       transition: all .2s;
+    }
+
+    &.a {
+      .button-like:hover {
+        color: $p1color3 !important;
+      }
+    }
+
+    &.b {
+      .button-like:hover {
+        color: $p2color3 !important;
+      }
     }
   }
 
@@ -181,14 +198,19 @@
     display: flex;
     align-content: center;
     justify-content: center;
+    padding-top: 2em;
 
     button {
       font-size: 150%;
       padding: 5%;
       border-radius: 10px;
+      margin-right: 1em;
+      opacity: .8;
+      background-color: rgba(black, .4);
 
       &:hover {
         cursor: pointer;
+        opacity: 1;
       }
     }
   }
@@ -217,6 +239,17 @@
       background-color: $p1color1;
       border-color: $p1color3;
 
+      .header-logo {
+
+        > * {
+          fill: $p1color2;
+        }
+
+        .leaf {
+          fill: white;
+        }
+      }
+
       .nav-link {
         color: $p1color2;
 
@@ -230,6 +263,16 @@
       background-color: $p2color1;
       border-color: $p2color2;
 
+      .header-logo {
+        > * {
+          fill: white;
+        }
+
+        .leaf {
+          fill: $p2color3;
+        }
+      }
+
       .nav-link {
         color: $p2color3;
 
@@ -238,6 +281,10 @@
         }
       }
     }
+  }
+
+  .intro {
+    padding-top: 3em;
   }
 
   .intro-logo {
