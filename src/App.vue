@@ -111,7 +111,7 @@
   h5 {
     padding: 0;
     margin: 0;
-    font-family: 'Capriola', sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
   }
 
   p {
@@ -300,9 +300,7 @@
   }
 
   .hero {
-    h1 span {
-      font-family: 'Capriola', sans-serif;
-    }
+    
   }
 
   .example-content {
